@@ -1,8 +1,8 @@
 "use strict";
 const {
     downloadContentFromMessage
-} = require("@adiwajshing/Baileys")
-const Baileys = require("@adiwajshing/Baileys")
+} = require("@adiwajshing/baileys")
+const Baileys = require("@adiwajshing/baileys")
 const { color, bgcolor } = require('../lib/color')
 const { serialize, getBuffer, fetchJson, fetchText, getRandom,
         getGroupAdmins, runtime, sleep, generateProfilePicture,
@@ -1526,21 +1526,22 @@ _Ada yang deposit nih mint, coba dicek, jika sudah masuk konfirmasi dengan klik 
                      { buttonId: '#infobot', buttonText: { displayText: 'Info Bot' }, type: 1 },
                      { buttonId: '#dashboard', buttonText: { displayText: 'Dashboard' }, type: 1 }
                     ]
-                   conn.sendMessage(from, { caption: teks, location: { jpegThumbnail: fs.readFileSync('./media/citantot.jpg')}, buttons: buts, footer: 'NullTeam-ID © 2021', mentions: [sender] }, { quoted: msg })
+                   //conn.sendMessage(from, { caption: teks, location: { jpegThumbnail: fs.readFileSync('./media/citantot.jpg')}, buttons: buts, footer: 'NullTeam-ID © 2021', mentions: [sender] }, { quoted: msg })
+                   reply(teks)
                    break
                 case prefix+'infobot': case prefix+'info':
                 case prefix+'botinfo':
                    addCountCmd('#infobot', sender, _cmd)
-                   var capt = `_*Chitanda Eru Bot Information*_
+                   var capt = `_*NdaaBotz-MD Bot Information*_
 
 *• Name :* ${conn.user.name}
 *• Number :* ${botNumber.split("@")[0]}
 *• Owner :* -
 *• Total Pengguna :* ${pendaftar.length}
 *• Prefix :* Multi Prefix
-*• Instagram :* @irfann._x
-*• Github :* github.com/rtwone
-*• Bot Created On 19 June 2021*
+*• Instagram :* ?
+*• Github :* github.com/github
+*• Bot Created On 28 Mei 2023*
 
 _*Special Thanks To :*_
 *• Allah SWT*
@@ -1558,7 +1559,8 @@ _*Special Thanks To :*_
                       { quickReplyButton: { displayText: `🗒️ Dashboard`, id: `${prefix}dashboard` } }
                    ]
                    var buts2 = [ { buttonId: prefix+'donate', buttonText: { displayText: `💰 Donasi` }, type: 1}, { buttonId: prefix+'dashboard', buttonText: { displayText: `🗒️ Dashboard` }, type: 1 } ]
-                   conn.sendMessage(from, { caption: capt, image: fs.readFileSync('./media/chibot.jpg'), footer: "NullTeam © 2021", buttons: buts2 })
+                   //conn.sendMessage(from, { caption: capt, image: fs.readFileSync('./media/chibot.jpg'), footer: "NullTeam © 2021", buttons: buts2 })
+                   reply(capt)
                    break
                 case prefix+'stat': case prefix+'stats':
                 case prefix+'statistik':
@@ -1586,12 +1588,12 @@ _*Special Thanks To :*_
 *Free :* ${freeGb} GB`
                    textImg(stat)
                    break
-                case prefix+'groupchitanda': case prefix+'grupchitanda':
-                case prefix+'grupchibot': case prefix+'grupbot':
+                case prefix+'gc': case prefix+'groupbot':
+                case prefix+'gcbot': case prefix+'grupbot':
                    addCountCmd('#groupchitanda', sender, _cmd)
-                   var link1 = 'https://chat.whatsapp.com/'+await conn.groupInviteCode("6285791458996-1628076093@g.us")
-                   var teks = `Jangan lupa join grup Chitanda Eru untuk mengetahui informasi lebih lanjut tentang bot\n\nGroup 1 : ${link1}\n\nJangan lupa juga untuk Donasi supaya admin semakin semangat dalam mengembangkan bot ini, terimakasih.`
-                   textImg(teks)
+                   var link1 = `https://chat.whatsapp.com/JnNNHb8wah55lTeaxjLjwy`
+                   var teks = `Jangan lupa join grup NdaaBotz-Md untuk mengetahui informasi lebih lanjut tentang bot\n\nGroup 1 : ${link1}\n\nJangan lupa juga untuk Donasi supaya admin semakin semangat dalam mengembangkan bot ini, terimakasih.`
+                   reply(teks)
                    break
                 case prefix+'runtime':
                    addCountCmd('#runtime', sender, _cmd)
@@ -1876,7 +1878,7 @@ kamu bisa Donasi melalui Kode Qris di atas, minimal Donasi Rp1.000 agar hasil do
                    if (args.length < 2) return reply(`Kirim perintah ${command} teks`)
                    if (q.length > 75) return reply(`Teks nya kepanjangan`)
                    addCountCmd('#attp', sender, _cmd)
-                   getBuffer(`https://api.xteam.xyz/attp?file&text=${encodeURIComponent(q)}`)
+                   getBuffer(`https://api.lolhuman.xyz/api/attp?apikey=BrunoSobrino&text=${encodeURIComponent(q)}`)
                    .then( res => {
                      if (res == undefined) return reply(mess.error.api)
                      var pathn = './sticker/'+getRandom('.webp')
@@ -1894,7 +1896,7 @@ kamu bisa Donasi melalui Kode Qris di atas, minimal Donasi Rp1.000 agar hasil do
                    if (args.length < 2) return reply(`Kirim perintah *${prefix}ttp* teks`)
                    if (q.length > 75) return reply(`Teksnya kepanjangan`)
                    addCountCmd('#ttp', sender, _cmd)
-                   getBuffer(`https://api.xteam.xyz/ttp?file&text=${encodeURIComponent(q)}`)
+                   getBuffer(`https://api.lolhuman.xyz/api/ttp?apikey=BrunoSobrino&text=${encodeURIComponent(q)}`)
                    .then( res => {
                      if (res == undefined) return reply(mess.error.api)
                      conn.sendImageAsSticker(from, res, msg, { packname, author })
@@ -2667,15 +2669,7 @@ kamu bisa Donasi melalui Kode Qris di atas, minimal Donasi Rp1.000 agar hasil do
                    reply(mess.wait)
                    addCountCmd('#tiktok', sender, _cmd)
                    require('../lib/tiktok2').Tiktok(ling).then( data => {
-                     conn.sendMessage(from, {
-                       video: { url: data.watermark },
-                       caption: `${data.title}\n\nKamu bisa mengubahnya menjadi Vidio Tanpa Watermark atau Audio, pencet tombol dibawah untuk mengubahnya!`,
-                       buttons: [
-                         { buttonId: `${prefix}tiktoknowm ${ling}`, buttonText: { displayText: `Without Watermark` }, type: 1 },
-                         { buttonId: `${prefix}tiktokaudio ${ling}`, buttonText: { displayText: 'Audio' }, type: 1 }
-                       ],
-                       footer: "Create by @irfann._x"
-                     }, { quoted: msg })
+                    conn.sendMessage(from, { video: { url: data.nowm }}, { quoted: msg })
                      limitAdd(sender, limit)
                    }).catch((e) => {
                      reply(mess.error.api)
@@ -2877,25 +2871,6 @@ kamu bisa Donasi melalui Kode Qris di atas, minimal Donasi Rp1.000 agar hasil do
                    }
                 }
                    break
-                case prefix+'igstory':
-                   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                   if (args.length < 2) return reply(`Kirim perintah ${command} username`)
-                   reply(mess.wait)
-                   addCountCmd('#igstory', sender, _cmd)
-                   if (args[1].startsWith("@")) args[1] = args[1].replace("@", "")
-                   igstory(args[1]).then(async(data) => {
-                     var teks = `Instagram Story total ${data.medias.length}, media segera dikirim`
-                     reply(teks)
-                     for (let i of data.medias) {
-                       var media = await getBuffer(i.url)
-                       if (i.type == "image") {
-                         conn.sendMessage(from, { image: media })
-                       } else if (i.type == "video") {
-                         conn.sendMessage(from, { video: media })
-                       }
-                     }
-                   }).catch(() => reply(mess.error.api))
-                   break
                 case prefix+'facebook': case prefix+'fbdl':
                    if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                    if (args.length < 2) return reply(`Kirim perintah ${command} link`)
@@ -2970,22 +2945,6 @@ kamu bisa Donasi melalui Kode Qris di atas, minimal Donasi Rp1.000 agar hasil do
                      }
                    })
                    .catch(() => { reply(mess.error.api) })
-                   break
-                case prefix+'spotify': case prefix+'spotifydl':
-                   if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                   if (args.length < 2) return reply(`Kirim perintah ${command} url`)
-                   if (!isUrl(args[1])) return reply(mess.error.Iv)
-                   if (!args[1].includes('spotify') && !args[1].includes('track')) return reply(mess.error.Iv)
-                   addCountCmd('#spotifydl', sender, _cmd)
-                   reply(mess.wait)
-                   require('../lib/spotify').spotifydl(args[1]).then(async(res) => {
-                     if (res.status === 403) return reply(`Url yang anda berikan tidak valid!`)
-                     var capt = `*SPOTIFY DOWNLOAD*\n\n*≻ Title :* ${res.title}\n*≻ Artist :* ${res.artist}\n*≻ Album :* ${res.album_name}\n*≻ Release :* ${res.release}`
-                     var img = await getBuffer(res.songs.img)
-                     conn.sendMessage(from, { image: img, caption: capt }, { quoted: msg })
-                     conn.sendMessage(from, { document: res.songs.audio, mimetype: 'audio/mp3', fileName: `${res.title}.mp3` }, { quoted: msg })
-                     limitAdd(sender, limit)
-                   }).catch((e) => reply(mess.error.api))
                    break
                 // Maker Menu
                 case prefix+'pornhub': case prefix+'logohub':

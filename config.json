@@ -1,7 +1,7 @@
 {
-  "ownerNumber": "6285791458996@s.whatsapp.net",
-  "ownerName": "r",
-  "botName": "Chitanda Eru Bot",
+  "ownerNumber": "6285640575421@s.whatsapp.net",
+  "ownerName": "Ndaa",
+  "botName": "NdaaBotz-Md",
   "sessionName": "rtwone-md",
   "pathimg": "./media/chibot.jpg",
   "lolkey": "SadTeams",
@@ -14,8 +14,8 @@
     "prem": 35,
     "user": 15
   },
-  "packname": "CHIBOT",
-  "author": "@irfann._x",
+  "packname": "Ndaa",
+  "author": "Botz",
   "playlist": [
     "https://open.spotify.com/playlist/66E9wQae4ME7kNeFkGQUpl",
     "https://open.spotify.com/playlist/3uml6rXP7L9UVVCKPbe7U4",
@@ -23,12 +23,12 @@
   ],
   "payment": {
     "gopay": {
-      "nomer": "6285791458996",
-      "atas_nama": "Irfan Hariyanto"
+      "nomer": "6285640575421",
+      "atas_nama": "Ndaa"
     },
     "dana": {
-      "nomer": "6285791458996",
-      "atas_nama": "Irfan Hariyanto"
+      "nomer": "6285640575421",
+      "atas_nama": "Ndaa"
     }
   }
 }

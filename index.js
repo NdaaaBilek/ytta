@@ -14,7 +14,7 @@ const {
         generateWAMessageFromContent,
         proto,
         prepareWAMessageMedia
-} = require("@adiwajshing/Baileys")
+} = require("@adiwajshing/baileys")
 const figlet = require("figlet");
 const fs = require("fs");
 const moment = require('moment')
@@ -42,7 +42,7 @@ function title() {
          width: 80,
          whitespaceBreak: false
       })))
-      console.log(chalk.yellow(`\n                        ${chalk.yellow('[ Created By Irfan ]')}\n\n${chalk.red('Chitanda Eru Bot')} : ${chalk.white('WhatsApp Bot Multi Device')}\n${chalk.red('Follow Insta Dev')} : ${chalk.white('@irfann._x')}\n${chalk.red('Message Me On WhatsApp')} : ${chalk.white('+62 857-9145-8996')}\n${chalk.red('Donate')} : ${chalk.white('085791458996 ( Gopay/Pulsa )')}\n`))
+      console.log(chalk.yellow(`\n                        ${chalk.yellow('[ Created By Ndaa ]')}\n\n${chalk.red('Chitanda Eru Bot')} : ${chalk.white('WhatsApp Bot Multi Device')}\n${chalk.red('Follow Insta Dev')} : ${chalk.white('@ndaaa_tz')}\n${chalk.red('Message Me On WhatsApp')} : ${chalk.white('+62 856-4057-5421')}\n${chalk.red('Donate')} : ${chalk.white('085640575421 ( Gopay/Pulsa )')}\n`))
 }
 
 /**

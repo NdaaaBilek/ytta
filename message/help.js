@@ -36,7 +36,7 @@ ${readmore}
  *≻* ${prefix}menu
  *≻* ${prefix}infobot
  *≻* ${prefix}stats
- *≻* ${prefix}groupchitanda
+ *≻* ${prefix}gcbot
  *≻* ${prefix}owner
  *≻* ${prefix}script
  *≻* ${prefix}donasi
@@ -110,7 +110,6 @@ ${readmore}
  *≻* ${prefix}getmusic
  *≻* ${prefix}soundcloud
  *≻* ${prefix}instagram
- *≻* ${prefix}igstory
  *≻* ${prefix}facebook
  *≻* ${prefix}mediafire
  *≻* ${prefix}telesticker
